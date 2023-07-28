@@ -1,0 +1,17 @@
+version 1.0
+qubits 2
+
+# Init qubits to ground state
+prep_z q[0:1]
+X q[1]
+{H q[0]|H q[1]}
+ 
+#.oracle_constant
+# do nothing or I q[0:1]
+ 
+#.oracle_balanced
+# CNOT q[0],q[1]
+ 
+#final hadamard gate
+H q[0]
+measure q[0]
